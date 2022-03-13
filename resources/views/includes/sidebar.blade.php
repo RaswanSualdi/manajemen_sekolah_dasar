@@ -40,7 +40,7 @@
                     <a href="{{route('mapel.index')}}">
                         <i class="fas  fa-list-ul"></i>Mata Pelajaran</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="form.html">
                         <i class="far fa-check-square"></i>Forms</a>
                 </li>
@@ -51,8 +51,8 @@
                 <li>
                     <a href="map.html">
                         <i class="fas fa-map-marker-alt"></i>Maps</a>
-                </li>
-                <li class="active has-sub">
+                </li> --}}
+                {{-- <li class="active has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-copy"></i>Pages</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -66,8 +66,8 @@
                             <a href="forget-pass.html">Forget Password</a>
                         </li>
                     </ul>
-                </li>
-                <li class="has-sub">
+                </li> --}}
+                {{-- <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-desktop"></i>UI Elements</a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
@@ -105,7 +105,7 @@
                             <a href="typo.html">Typography</a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </nav>
     </div>

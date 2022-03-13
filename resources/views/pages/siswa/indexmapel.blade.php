@@ -37,7 +37,7 @@
                     <td> <a href="{{route('mapel.guru.index', $mpl->id)}}" > 
                         <i class="fa fa-edit"></i>
                     </a></td>
-                    <td><form action="{{route('mapel.destroy', $mpl->id)}}" method="post" class="d-inline">
+                    <td><form action="{{route('mapel.destroy', $mpl->id)}}" method="post" class="d-inline" class="d-inline" onclick="return confirm('Yakin mau dihapus? ')">
                         @csrf
                         @method('delete')
                          <button type="submit"{{--class="btn btn-danger btn-sm"--}}> 

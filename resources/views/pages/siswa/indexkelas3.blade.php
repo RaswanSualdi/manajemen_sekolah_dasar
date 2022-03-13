@@ -18,9 +18,9 @@
         <tbody>
             @foreach($items as $item)
             <tr>
-                <td>{{$item->photo}}</td>
+                <td><img src="{{url($item->photo)}}" alt=""></td>
                 <td>{{$item->nama}}</td>
-                <td><a href="{{route('create.nilai', $item->id)}}" {{-- class="btn btn-primary btn-sm"--}}> 
+                <td><a href="{{route('nilai.siswa.index', $item->id)}}" {{-- class="btn btn-primary btn-sm"--}}> 
                     <i class=" fa fa-plus-square"></i>
                     </a>
                 </td>
@@ -36,7 +36,7 @@
                    <a href="{{route('siswa.edit', $item->id)}}" {{-- class="btn btn-primary btn-sm"--}}> 
                     <i class="fa fa-edit"></i>
                 </a>
-                <form action="{{route('siswakelas3.destroy', $item->id)}}" method="post" class="d-inline">
+                <form action="{{route('siswakelas3.destroy', $item->id)}}" method="post" class="d-inline" class="d-inline" onclick="return confirm('Yakin mau dihapus?')">
                     @csrf
                     @method('delete')
                      <button {{--class="btn btn-danger btn-sm"--}}> 

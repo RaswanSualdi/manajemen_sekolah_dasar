@@ -69,7 +69,7 @@
                 <tr>
                     <td>{{$mpl->mapel->mapel}}</td>
                     <td>{{$mpl->nilai}}</td>
-                    <td><form action="{{route('siswa.destroy', $mpl->id)}}" method="post" class="d-inline">
+                    <td><form action="{{route('siswa.destroy', $mpl->id)}}" method="post" class="d-inline" onclick="return confirm('Yakin mau dihapus?')">
                         @csrf
                         @method('delete')
                          <button type="submit"{{--class="btn btn-danger btn-sm"--}}> 

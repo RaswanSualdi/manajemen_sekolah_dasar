@@ -36,7 +36,7 @@
                    <a href="{{route('siswa.edit', $item->id)}}" {{-- class="btn btn-primary btn-sm"--}}> 
                     <i class="fa fa-edit"></i>
                 </a>
-                <form action="{{route('siswakelas5.destroy', $item->id)}}" method="post" class="d-inline">
+                <form action="{{route('siswakelas5.destroy', $item->id)}}" method="post" class="d-inline" class="d-inline" onclick="return confirm('Yakin mau dihapus?')">
                     @csrf
                     @method('delete')
                      <button {{--class="btn btn-danger btn-sm"--}}> 
