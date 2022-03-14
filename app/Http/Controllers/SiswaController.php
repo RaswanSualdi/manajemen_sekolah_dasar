@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Siswa;
 use App\Models\Mapel;
 use App\Models\Kelas;
+use App\Models\User;
 use App\Http\Requests\CreateSiswaRequest;
 class SiswaController extends Controller
 {
@@ -66,12 +67,22 @@ class SiswaController extends Controller
         $this->validate($request,[
             'nama'=>'required|max:34',
             'kelas_id'=>'required',
-            'photo'=>'required|image'
+            'photo'=>'required|image',
+            'email'=>'required'
         ]);
         $data = $request->all();
 
         $data['photo']= $request->file('photo')->store('assets/siswa', 'public');
          $siswa= Siswa::with('kelas')->create($data);
+         $user = new User([
+             'siswa_id'=> $siswa->id,
+             'email'=> $siswa->email,
+             'role'=> 'siswa',
+             'password'=> bcrypt('siswa'),
+             'name'=> $siswa->nama,
+         ]);
+
+         $siswa->user()->save($user);
          return redirect()->route('siswa.create')
          ->withSuccess('Data'.' '. $siswa->nama.' '.' berhasil ditambahkan'.' '.' dikelas'.' '.  $siswa->kelas->kelas);
     

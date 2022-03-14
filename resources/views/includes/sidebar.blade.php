@@ -7,6 +7,7 @@
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
+               
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-list-ol"></i>Kelas</a>
@@ -32,6 +33,7 @@
                         </li>
                     </ul>
                 </li>
+                
                 <li>
                     <a href="{{route('siswa.create')}}">
                         <i class=" fas fa-plus"></i>Tambah Siswa</a>

@@ -13,15 +13,19 @@ use App\Http\Controllers\siswaKelas4Controller;
 use App\Http\Controllers\siswaKelas5Controller;
 use App\Http\Controllers\siswaKelas6Controller;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RegisterUserController;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::get('/',[AuthController::class,'login'])->name('login');
 Route::get('/logout',[AuthController::class,'logout'])->name('logout');
 Route::post('/postLogin',[AuthController::class,'postLogin'])->name('postLogin');
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/register', [RegisterUserController::class, 'indexregister'])->name('register');
+Route::post('/postRegister', [RegisterUserController::class, 'postRegister'])->name('postRegister');
 
 
-Route::group(['middleware'=> 'auth'], function(){
+Route::group(['middleware'=> ['auth','CheckRole:admin']], function(){
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
     Route::resource('siswa',SiswaController::class);
     Route::resource('nilai.siswa',NilaiSiswaController::class)->shallow();
     Route::resource('mapel.guru', GuruMapelController::class)->shallow();
@@ -32,5 +36,9 @@ Route::group(['middleware'=> 'auth'], function(){
     Route::resource('siswakelas4',siswaKelas4Controller::class);
     Route::resource('siswakelas5',siswaKelas5Controller::class);
     Route::resource('siswakelas6',siswaKelas6Controller::class);
+});
+
+Route::group(['middleware'=>['auth','CheckRole:admin,guru,siswa']], function(){
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 });
 

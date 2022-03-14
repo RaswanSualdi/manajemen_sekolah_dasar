@@ -17,6 +17,16 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="email" id="username2" name="email" placeholder="Email Siswa" class="form-control">
+                    <div class="input-group-addon">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+            </div>
+
+
             
             <div class="row form-group">
         
