@@ -8,6 +8,11 @@
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list">
                
+                   <li>
+                    <a href="#"> 
+                        <i class="fas fa-home"></i>Dashboard</a>
+                    </li>
+
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-list-ol"></i>Kelas</a>
@@ -39,12 +44,16 @@
                         <i class=" fas fa-plus"></i>Tambah Siswa</a>
                 </li>
                 <li>
+                    <a href="{{route('siswa.create')}}">
+                        <i class=" fas fa-plus"></i>Tambah Guru</a>
+                </li>
+                <li>
                     <a href="{{route('mapel.index')}}">
                         <i class="fas  fa-list-ul"></i>Mata Pelajaran</a>
                 </li>
-                {{-- <li>
-                    <a href="form.html">
-                        <i class="far fa-check-square"></i>Forms</a>
+                {{--  <li>
+                    <ahref="form.html">
+                        <i class="far fa-home"></i>Forms</a>
                 </li>
                 <li>
                     <a href="calendar.html">

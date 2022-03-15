@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Guru;
+use App\Models\User;
 
 class guruController extends Controller
 {
@@ -13,7 +15,8 @@ class guruController extends Controller
      */
     public function index()
     {
-        //
+        $guru = Guru::all();
+        return view('pages.admin.indexguru',compact('guru'));
     }
 
     /**
@@ -23,7 +26,7 @@ class guruController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.admin.createguru');
     }
 
     /**
@@ -34,7 +37,20 @@ class guruController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $guru = Guru::create($data);
+         $user = new User([
+             'name'=>$guru->nama,
+             'guru_id'=> $guru->id,
+             'email'=>$guru->email,
+             'role'=>'guru',
+             'password' => bcrypt('guru'),
+
+         ]);
+
+         $guru->user()->save($user);
+         return redirect()->route('guru.index')->withSuccess('data guru berhasil ditambahkan');
+
     }
 
     /**
@@ -79,6 +95,8 @@ class guruController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $guru = Guru::find($id);
+        $guru->delete();
+         return redirect()->route('guru.index')->withSuccess('data '.$guru->nama. ' telah dihapus');
     }
 }

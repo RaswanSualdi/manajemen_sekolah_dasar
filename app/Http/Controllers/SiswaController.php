@@ -13,45 +13,13 @@ class SiswaController extends Controller
    
     public function index()
     {
-        // $items = Siswa::with('kelas')->where('kelas_id',1)->get();       
-        // return view('pages.siswa.indexkelas1')->with(['items'=>$items]);     
+      
+          
         
     }
 
-    // public function indexkelas2()
-    // {
-    //     $items = Siswa::with('kelas')->where('kelas_id',2)->get();       
-    //     return view('pages.siswa.indexkelas2')->with(['items'=>$items]);     
-        
-    // }
-
-    // public function indexkelas3()
-    // {
-    //     $items = Siswa::with('kelas')->where('kelas_id',3)->get();       
-    //     return view('pages.siswa.indexkelas3')->with(['items'=>$items]);     
-        
-    // }
-
-    // public function indexkelas4()
-    // {
-    //     $items = Siswa::with('kelas')->where('kelas_id',4)->get();       
-    //     return view('pages.siswa.indexkelas4')->with(['items'=>$items]);     
-        
-    // }
-
-    // public function indexkelas5()
-    // {
-    //     $items = Siswa::with('kelas')->where('kelas_id',5)->get();       
-    //     return view('pages.siswa.indexkelas5')->with(['items'=>$items]);     
-        
-    // }
-
-    // public function indexkelas6()
-    // {
-    //     $items = Siswa::with('kelas')->where('kelas_id',6)->get();       
-    //     return view('pages.siswa.indexkelas6')->with(['items'=>$items]);     
-        
-    // }
+  
+    
 
   
     public function create()

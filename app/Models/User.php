@@ -22,7 +22,8 @@ class User extends Authenticatable
         'email',
         'role',
         'password',
-        'siswa_id'
+        'siswa_id',
+        'guru_id'
     ];
 
     /**
@@ -46,5 +47,9 @@ class User extends Authenticatable
 
     public function siswa(){
         return $this->belongsTo(Siswa::class, 'siswa_id','id');
+    }
+
+    public function guru(){
+        return $this->belongsTo(Guru::class, 'guru_id','id');
     }
 }

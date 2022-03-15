@@ -4,6 +4,7 @@
 use App\Http\Controllers\NilaiSiswaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\guruController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\GuruMapelController;
 use App\Http\Controllers\siswaKelas1Controller;
@@ -25,8 +26,9 @@ Route::post('/postRegister', [RegisterUserController::class, 'postRegister'])->n
 
 
 Route::group(['middleware'=> ['auth','CheckRole:admin']], function(){
-    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/admin',[DashboardController::class, 'index'])->name('dashboard.siswa');
     Route::resource('siswa',SiswaController::class);
+    Route::resource('guru',guruController::class);
     Route::resource('nilai.siswa',NilaiSiswaController::class)->shallow();
     Route::resource('mapel.guru', GuruMapelController::class)->shallow();
     Route::resource('mapel',MapelController::class);
@@ -38,7 +40,7 @@ Route::group(['middleware'=> ['auth','CheckRole:admin']], function(){
     Route::resource('siswakelas6',siswaKelas6Controller::class);
 });
 
-Route::group(['middleware'=>['auth','CheckRole:admin,guru,siswa']], function(){
+Route::group(['middleware'=>['auth','CheckRole:guru,admin,siswa']], function(){
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 });
 
