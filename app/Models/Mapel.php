@@ -18,6 +18,10 @@ class Mapel extends Model
     public function gurumapel(){
         return $this->hasMany(GuruMapel::class,'mapel_id');
     }
+
+    public function jadwalmapel(){
+        return $this->hasMany(JadwalMapel::class, 'mapel_id');
+    }
 }
 
 

@@ -14,6 +14,6 @@ class GuruMapel extends Model
     }
 
     public function mapel(){
-        return $this->belongsTo(Mapel::class, 'ampel_id','id');
+        return $this->belongsTo(Mapel::class, 'mapel_id','id');
     }
 }

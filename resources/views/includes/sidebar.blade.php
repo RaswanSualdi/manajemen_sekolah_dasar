@@ -38,18 +38,29 @@
                         </li>
                     </ul>
                 </li>
+
+                <li>
+                    <a href="{{route('daftarguru.index')}}">
+                        <i class=" fas fa-user"></i>Guru</a>
+                </li>
                 
                 <li>
                     <a href="{{route('siswa.create')}}">
                         <i class=" fas fa-plus"></i>Tambah Siswa</a>
                 </li>
                 <li>
-                    <a href="{{route('siswa.create')}}">
+                    <a href="{{route('daftarguru.create')}}">
                         <i class=" fas fa-plus"></i>Tambah Guru</a>
                 </li>
                 <li>
                     <a href="{{route('mapel.index')}}">
                         <i class="fas  fa-list-ul"></i>Mata Pelajaran</a>
+                </li>
+                
+                <li class="has-sub">
+                    <a class="js-arrow" href="{{route('jadwal')}}">
+                        <i class="fas fa-calendar-alt"></i>Jadwal Mapel</a>
+                   
                 </li>
                 {{--  <li>
                     <ahref="form.html">

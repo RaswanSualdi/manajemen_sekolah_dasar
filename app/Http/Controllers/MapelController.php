@@ -18,6 +18,7 @@ class MapelController extends Controller
     public function index()
     {
         $mapel = Mapel::with('gurumapel.guru')->get();
+        // dd($mapel);
         
         return view('pages.siswa.indexmapel')->with(['mapel'=>$mapel]);
 

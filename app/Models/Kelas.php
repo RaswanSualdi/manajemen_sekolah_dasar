@@ -12,4 +12,19 @@ class Kelas extends Model
     public function siswa(){
         return $this->hasMany(Siswa::class, 'kelas_id');
     }
+
+    // public function jadwalmapel(){
+    //     return $this->hasMany(JadwalMapel::class, 'kelas_id');
+    // }
+
+    public function jadwal(){
+        return $this->hasMany(Jadwal::class,'kelas_id');
+    }
+
+    public function jadwalkelas(){
+        return $this->hasMany(Jadwalkelas::class, 'kelas_id');
+
+    }
+
+    
 }

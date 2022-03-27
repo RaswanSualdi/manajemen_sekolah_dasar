@@ -9,7 +9,7 @@ class Guru extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama', 'email','nohp','nip','alamat'
+        'nama', 'email','nohp','nip','alamat', 'photo'
     ];
     
     public function gurumapel(){
@@ -18,6 +18,11 @@ class Guru extends Model
 
     public function user(){
         return $this->hasOne(User::class, 'guru_id');
+    }
+
+    public function getPhotoAttribute($value){
+        return url('storage/' . $value); //setelah melakukan ini ketiakn pada command "php artisan storage:link"
+                                        //nama function ini harus getPhotoAttribute
     }
 
 

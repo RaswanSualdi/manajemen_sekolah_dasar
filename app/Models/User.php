@@ -23,7 +23,7 @@ class User extends Authenticatable
         'role',
         'password',
         'siswa_id',
-        'guru_id'
+        'guru_id',
     ];
 
     /**
