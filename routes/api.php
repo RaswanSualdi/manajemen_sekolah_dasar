@@ -20,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 Route::get('siswa',[siswaKelas1Controller::class, 'index']);
+
+
+// sbhfasterneswkjfnjsdnfkjdsgngrnejgnjnkjdfghretgndfbnjfbngfbgfn
+// djuhgidrgrgkjnrjennhnnhtjnrtmnkjkjnjnkjnbhjndf
+// gnjdfgndfjgndrngjdrengjrngjrgnrngrnjehnrjehnjehn
